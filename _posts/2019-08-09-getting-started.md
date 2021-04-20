@@ -9,147 +9,77 @@ pin: true
 
 ## Prerequisites
 
-文章测试，哈哈哈哈。。。。
-文章测试，哈哈哈哈。。。。
-文章测试，哈哈哈哈。。。。
+# 室内定位技术概况
 
-文章测试，哈哈哈哈。。。。
-文章测试，哈哈哈哈。。。。
-文章测试，哈哈哈哈。。。。
+### 定义
 
-Follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems`, `Jekyll` and `Bundler`.
+&emsp;&emsp;室内定位是指在室内环境中实现位置定位，主要采用无线通讯、基站定位、惯导定位、动作捕捉 等多种技术集成形成一套室内位置定位体系，从而实现人员、物体等在室内空间中的位置监控。
 
-## Installation
+### 定位技术
 
-There are two ways to get the theme:
+常见的室内定位技术包括：WiFi、蓝牙、红外线、超宽带、RFID、ZigBee、动作捕捉、超声波。
 
-- **Install from RubyGems** - Easy to update, isolate irrelevant project files so you can focus on writing.
-- **Fork on GitHub** - Convenient for custom development, but difficult to update, only suitable for web developers.
+- WiFi技术：通过无线接入点（包括无线路由器）组成的无线局域网络(WLAN)，可以实现复杂环境中的定位、监测和追踪任务。它以网络节点（无线接入点）的位置信息为基础和前提，采用经验测试和信号传播模型相结合的方式，对已接入的移动设备进行位置定位，最高精确度大约在1米至20米之间。如果定位测算仅基于当前连接的Wi-Fi接入点，而不是参照周边Wi-Fi的信号强度合成图，则Wi-Fi定位就很容易存在误差（例如：定位楼层错误）。另外，Wi-Fi接入点通常都只能覆盖半径90米左右的区域，而且很容易受到其他信号的干扰，从而影响其精度，定位器的能耗也较高。
 
-### Installing the Theme Gem
+- 蓝牙技术：蓝牙通讯是一种短距离低功耗的无线传输技术，在室内安装适当的[蓝牙局域网](https://baike.baidu.com/item/蓝牙局域网/9696330)接入点后，将网络配置成基于多用户的基础网络连接模式，并保证蓝牙局域网接入点始终是这个微网络的主设备。这样通过检测信号强度就可以获得用户的位置信息。蓝牙定位主要应用于小范围定位，例如：单层大厅或仓库。对于持有集成了蓝牙功能移动终端设备，只要设备的蓝牙功能开启，蓝牙室内定位系统就能够对其进行位置判断。不过，对于复杂的空间环境，蓝牙定位系统的稳定性稍差，受噪声信号干扰大。
 
-Add this line to your Jekyll site's `Gemfile`:
+- 红外线技术：红外线技术室内定位是通过安装在室内的[光学传感器](https://baike.baidu.com/item/光学传感器/7430386)，接收各移动设备（红外线IR标识）发射调制的红外射线进行定位，具有相对较高的室内定位精度。效果较差、成本较高。
 
-```ruby
-gem "jekyll-theme-chirpy"
-```
+- 超宽带技术：通过发送和接收具有纳秒或纳秒级以下的极窄脉冲来传输数据，可用于室内精确定位，例如：战场士兵的位置发现、机器人运动跟踪等。超宽带系统与传统的窄带系统相比，具有穿透力强、功耗低、抗多径效果好、安全性高、系统复杂度低、能够提高精确定位精度等优点，通常用于室内移动物体的定位跟踪或导航。
 
-And add this line to your Jekyll site's `_config.yml`:
+- RFID技术：RFID定位技术利用射频方式进行非接触式双向通信交换数据，实现移动设备识别和定位的目的。它可以在几毫秒内得到厘米级定位精度的信息，且传输范围大、成本较低；但存在问题较多：不便于整合到移动设备中、作用距离短、用户的安全隐私、国际标准化。
 
-```yaml
-theme: jekyll-theme-chirpy
-```
+- ZigBee技术：ZigBee是一种短距离、低速率的无线网络技术。它介于RFID和蓝牙之间，可以通过传感器之间的相互协调通信进行设备的位置定位。这些传感器只需要很少的能量，以接力的方式通过无线电波将数据从一个传感器传到另一个传感器，所以ZigBee最显著的技术特点是它的低功耗和低成本。
 
-And then execute:
+- 超声波定位：超声波定位主要采用反射式测距（发射超声波并接收由被测物产生的回波后，根据回波与发射波的时间差计算出两者之间的距离），并通过三角定位等算法确定物体的位置。精度高、成本高。
 
-```console
-$ bundle
-```
+- 动作捕捉技术：NOKOV动作捕捉系统属于视觉定位，通过排布在空间中的动作捕捉镜头对室内空间的捕捉区域进行覆盖，并对捕捉目标上放置的反光标志点（Marker）进行三维空间位置的精确捕捉，通过处理和运算后，系统可得到反光标志点的三维空间坐标(X，Y，Z)；也可对目标物进行刚体设置，通过专业分析软件对数据进一步处理和运算，可得到目标物体精确位置及姿态等。
 
-Finally, copy the required files from the theme's gem (for detailed files, see [starter project][starter]) to your Jekyll site.
+  <img src="https://gitee.com/Hecok/gitbookimage/raw/master/Indoor_Postion3.jpg"/>
 
-> **Hint**: To locate the installed theme’s gem, execute:
->
-> ```console
-> $ bundle info --path jekyll-theme-chirpy
-> ```
+  <img src="https://gitee.com/Hecok/gitbookimage/raw/master/Indoor_Postion1.jpg"/>
 
-Or you can [**use the starter template**][use-starter] to create a Jekyll site to save time copying files from theme's gem. We have prepared everything for you there!
+### 技术前景
 
-### Fork on GitHub
+##### 一．室内定位技术的前景
 
-[Fork **Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork) on GitHub and then clone your fork to local. (Please note that the default branch code is in development.  If you want the blog to be stable, please switch to the [latest tag](https://github.com/cotes2020/jekyll-theme-chirpy/tags) and start writing.)
+1.未来是移动互联的时代
 
-Install gem dependencies by:
+2.移动服务最后一米的机会
 
-```console
-$ bundle
-```
+人平均80%的时间在室内，80%移动电话使用和数据连接在室内使用。
 
-And then execute:
+##### 二．室内定位的需求
 
-```console
-$ bash tools/init.sh
-```
+1.公共安全及应急响应
 
-> **Note**: If you don't plan to deploy your site on GitHub Pages, append parameter option `--no-gh` at the end of the above command.
+在紧急情况下，每一个人都想被救援人员精确定位到，大到建筑物的位置，甚至是楼层或者房间号。
 
-What it does is:
+2.定位导览
 
-1. Remove some files or directories from your repository:
-    - `.travis.yml`
-    - files under `_posts`
-    - folder `docs`
+（1）这建筑物内有什么东西。
 
-2. If you use the `--no-gh` option, the directory `.github` will be deleted. Otherwise, setup the GitHub Action workflow by removing extension `.hook` of `.github/workflows/pages-deploy.yml.hook`, and then remove the other files and directories in folder `.github`.
+（2）我办公室的周围是谁。
 
-3. Automatically create a commit to save the changes.
+（3）我车放在地下停车场什么位置。
 
-## Usage
+（4）超市里的牛奶在什么位置。
 
-### Configuration
+（5）大型商场里面最近的餐馆在哪里。
 
-Update the variables of `_config.yml` as needed. Some of them are typical options:
+（6）怎么去那里。
 
-- `url`
-- `avatar`
-- `timezone`
-- `lang`
+3.社交需求
 
-### Running Local Server
+实现名片交换、微博推送、类似微信进行交友互动等等。
 
-You may want to preview the site contents before publishing, so just run it by:
+4.市场推广需求
 
-```console
-$ bundle exec jekyll s
-```
+在百货商场里为客户提供导购服务。手机会告诉你，提供导购服务，附近有哪些商品在打折。
 
-Or run the site on Docker with the following command:
+在旅游景区、展馆、机场、实现定位导览，进行展品介绍等。机场，可以精确引导用户办手续、指示卫生间位置等等。
 
-```terminal
-$ docker run -it --rm \
-    --volume="$PWD:/srv/jekyll" \
-    -p 4000:4000 jekyll/jekyll \
-    jekyll serve
-```
-
-Open a browser and visit to _<http://localhost:4000>_.
-
-### Deployment
-
-Before the deployment begins, checkout the file `_config.yml` and make sure the `url` is configured correctly. Furthermore, if you prefer the [**project site**](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) and don't use a custom domain, or you want to visit your website with a base url on a web server other than **GitHub Pages**, remember to change the `baseurl` to your project name that starting with a slash, e.g, `/project-name`.
-
-Now you can choose ONE of the following methods to deploy your Jekyll site.
-
-#### Deploy on GitHub Pages
-
-For security reasons, GitHub Pages build runs on `safe` mode, which restricts us from using plugins to generate additional page files. Therefore, we can use **GitHub Actions** to build the site, store the built site files on a new branch, and use that branch as the source of the GH Pages service.
-
-Quickly check the files needed for GitHub Actions build:
-
-- Ensure your Jekyll site has the file `.github/workflows/pages-deploy.yml`. Otherwise, create a new one and fill in the contents of the [workflow file][workflow], and the value of the `on.push.branches` should be the same as your repo's default branch name.
-- Ensuer your Jekyll site has file `tools/test.sh` and `tools/deploy.sh`. Otherwise, copy them from this repo to your Jekyll site.
-
-And then rename your repoistory to `<GH-USERNAME>.github.io` on GitHub.
-
-Now publish your Jekyll site by:
-
-1. Push any commit to remote to trigger the GitHub Actions workflow. Once the build is complete and successful, a new remote branch named `gh-pages` will appear to store the built site files.
-
-2. Browse to your repo's landing page on GitHub and select the branch `gh-pages` as the [publishing source](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) throught _Settings_ → _Options_ → _GitHub Pages_:
-
-    ![gh-pages-sources](https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/posts/20190809/gh-pages-sources.png)
-
-3. Visit your website at the address indicated by GitHub.
-
-#### Deploy on Other Platforms
-
-On platforms other than GitHub, we cannot enjoy the convenience of **GitHub Actions**. Therefore, we should build the site locally (or on some other 3rd-party CI platform) and then put the site files on the server.
-
-Go to the root of the source project, build your site by:
-
-```console
-$ JEKYLL_ENV=production bundle exec jekyll b
+5.有价值数据的大数据方式应用 [11]
 ```
 
 Or build the site with Docker by:
@@ -162,8 +92,3 @@ $ docker run -it --rm \
     jekyll build
 ```
 
-Unless you specified the output path, the generated site files will be placed in folder `_site` of the project's root directory. Now you should upload those files to your web server.
-
-[starter]: https://github.com/cotes2020/chirpy-starter
-[use-starter]: https://github.com/cotes2020/chirpy-starter/generate
-[workflow]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/.github/workflows/pages-deploy.yml.hook

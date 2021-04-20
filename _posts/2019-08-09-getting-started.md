@@ -1,13 +1,21 @@
 ---
 title: Getting Started
 author: Cotes Chung
-date: 2019-08-09 20:55:00 +0800
-categories: [Blogging, Tutorial]
-tags: [getting started]
+date: 2021-04-20 20:55:00 +0800
+categories: [Blogging, Test]
+tags: [测试]
 pin: true
 ---
 
 ## Prerequisites
+
+文章测试，哈哈哈哈。。。。
+文章测试，哈哈哈哈。。。。
+文章测试，哈哈哈哈。。。。
+
+文章测试，哈哈哈哈。。。。
+文章测试，哈哈哈哈。。。。
+文章测试，哈哈哈哈。。。。
 
 Follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems`, `Jekyll` and `Bundler`.
 
